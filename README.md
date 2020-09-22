@@ -1,4 +1,4 @@
 # aguirrec
-# Alo
-Hola esta es una prubeba de actualizacion
-Prueba de arrastrado
+# Este es el repositorio de Eduardo Jared Aguirre Cárdenas.
+Número de Control: 19100140
+
