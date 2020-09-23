@@ -24,6 +24,8 @@ public class VentanaFibonacci extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField txtFin;
+	private JTextField txtValor2;
+	private JTextField txtValor1;
 
 	/**
 	 * Launch the application.
@@ -46,7 +48,7 @@ public class VentanaFibonacci extends JFrame {
 	 */
 	public VentanaFibonacci() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 235, 153);
+		setBounds(100, 100, 260, 197);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -65,43 +67,71 @@ public class VentanaFibonacci extends JFrame {
 		        String _strMessage = new String();
 		        
 		        try {
+		        	_intValor1 = Integer.parseInt(txtValor1.getText());
+		        	_intValor2 = Integer.parseInt(txtValor2.getText());
 		        	_intValorLimFin = Integer.parseInt(txtFin.getText());
 		        }
 		        catch(Exception e){
-		        	_intValorLimFin = 0;
+		        	_intValor1 = 0;
+		        	_intValor2 = 0;
+		        	_intValorLimFin = 1;
+		        	JOptionPane.showMessageDialog(null, e);
 		        }
 		        
 		        //int _intValorLimiteFinal = Integer.parseInt()
 		        int i=0;
-		        do {
-		            _intValor3 = _intValor1 + _intValor2;
-		            i++;
-		            if(!(_intValor3 > _intValorLimFin)) {
-		            	System.out.println("Vez " + i +"\nSuma de :\n Valor 1: " + _intValor1 + "\n Valor 2: " + _intValor2 + "\n Igual a: "  + _intValor3);
-		            	_strMessage = _strMessage + "\nVez " + i +"\nSuma de :\n Valor 1: " + _intValor1 + "\n Valor 2: " + _intValor2 + "\n Igual a: "  + _intValor3;
-		            }
+		        for (int j = 0; j < _intValorLimFin; j++) {
+		        	_intValor3 = _intValor1 + _intValor2;
+		            
+		            
+		            	System.out.println("Vez " + j +"\nSuma de :\n Valor 1: " + _intValor1 + "\n Valor 2: " + _intValor2 + "\n Igual a: "  + _intValor3);
+		            	_strMessage = _strMessage + "\nVez " + j +"\nSuma de :\n Valor 1: " + _intValor1 + "\n Valor 2: " + _intValor2 + "\n Igual a: "  + _intValor3;
+		            
 		            
 
 		            _intValor1 = _intValor2;
 		            _intValor2 = _intValor3;
+					
+				}
 		            
-		        }while (_intValor3 < _intValorLimFin);
+		            
+		        
 		        System.out.println("Muchas Gracias por Eduardo Jared Aguirre Cárdenas 19100140");
 		        _strMessage = _strMessage + "\nMuchas Gracias por Eduardo Jared Aguirre Cárdenas 19100140";
 		        JOptionPane.showMessageDialog(null, _strMessage);
 			}
 		});
-		btnNewButton.setBounds(47, 61, 119, 33);
+		btnNewButton.setBounds(61, 104, 119, 33);
 		contentPane.add(btnNewButton);
 		
-		JLabel lblNewLabel = new JLabel("Fin");
+		JLabel lblNewLabel = new JLabel("Iteraciones");
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 15));
-		lblNewLabel.setBounds(47, 30, 23, 20);
+		lblNewLabel.setBounds(22, 73, 86, 20);
 		contentPane.add(lblNewLabel);
 		
 		txtFin = new JTextField();
-		txtFin.setBounds(80, 32, 86, 20);
+		txtFin.setBounds(129, 75, 86, 20);
 		contentPane.add(txtFin);
 		txtFin.setColumns(10);
+		
+		JLabel lblNewLabel_1 = new JLabel("Valor 2");
+		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 15));
+		lblNewLabel_1.setBounds(54, 48, 54, 14);
+		contentPane.add(lblNewLabel_1);
+		
+		txtValor2 = new JTextField();
+		txtValor2.setBounds(129, 42, 86, 20);
+		contentPane.add(txtValor2);
+		txtValor2.setColumns(10);
+		
+		JLabel lblNewLabel_1_1 = new JLabel("Valor 1");
+		lblNewLabel_1_1.setFont(new Font("Tahoma", Font.BOLD, 15));
+		lblNewLabel_1_1.setBounds(54, 17, 54, 14);
+		contentPane.add(lblNewLabel_1_1);
+		
+		txtValor1 = new JTextField();
+		txtValor1.setColumns(10);
+		txtValor1.setBounds(129, 11, 86, 20);
+		contentPane.add(txtValor1);
 	}
 }
