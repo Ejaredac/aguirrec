@@ -9,7 +9,7 @@ public class Hilo extends Thread{
 	private JProgressBar component;
 	
 	private Random rand;
-	private Hilo competidor;
+	public Hilo competidor;
 	private JButton boton;
 	
 	public volatile boolean estaCompletado = false;

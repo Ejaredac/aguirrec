@@ -74,7 +74,8 @@ public class MainHilos extends JFrame implements ActionListener {
 		if(e.getSource() == btnCorrer) {
 			
 			 barraUno = new Hilo(progresoPrimero,"El primero",btnCorrer,barraDos);
-			 barraDos = new Hilo(progresoSegundo, "El segundo",btnCorrer,barraUno);			
+			 barraDos = new Hilo(progresoSegundo, "El segundo",btnCorrer,barraUno);	
+			 barraUno.competidor = barraDos;
 			
 			
 			barraUno.start();
